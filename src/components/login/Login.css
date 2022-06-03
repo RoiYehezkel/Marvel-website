@@ -1,0 +1,115 @@
+.login {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  padding-top: 200px;
+  padding-bottom: 90px;
+  background-color: rgb(252, 252, 252);
+}
+.header {
+  padding-bottom: 10px;
+}
+.login-container {
+  display: flex;
+  justify-content: center;
+  height: 550px;
+  width: 35%;
+  box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
+  padding-top: 30px;
+  border-radius: 60px;
+  background-color: white;
+}
+
+.imgs {
+  padding-top: 20px;
+  justify-content: center;
+  display: flex;
+}
+
+.container-image {
+  background-color: rgb(223, 221, 221);
+  border-radius: 150px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 115px;
+  width: 115px;
+}
+
+.profile-img {
+  height: 100px;
+  width: 100px;
+  border-radius: 130px;
+}
+
+input {
+  width: 300px;
+  height: 50px;
+  border-radius: 60px;
+  box-shadow: inset 0px 0px 25px 0px #888;
+  border: none;
+  outline: none;
+  background-color: #fff;
+}
+.input-icons i {
+  position: absolute;
+}
+
+.input-icons {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.icon {
+  padding: 15px;
+  min-width: 40px;
+}
+
+.name {
+  padding-left: 40px;
+  font-size: 20px;
+}
+
+.second-input {
+  padding-top: 20px;
+}
+
+.login-button {
+  width: 300px;
+  height: 50px;
+  border-radius: 60px;
+  background-color: #b103fc;
+  color: white;
+  font-size: 25px;
+  border: none;
+}
+.login-button:hover {
+  background-color: #b159d7;
+  transition: all 0.2s ease-out;
+}
+
+.login-button-wrapper {
+  padding-top: 25px;
+}
+
+.link {
+  padding-top: 40px;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+a {
+  color: blue;
+}
+.welcome-text {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 100%;
+}
+
+.out-text {
+  color: white;
+}
