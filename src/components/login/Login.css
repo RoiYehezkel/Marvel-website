@@ -13,7 +13,7 @@
   display: flex;
   justify-content: center;
   height: 550px;
-  width: 35%;
+  width: 450px;
   box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
   padding-top: 30px;
   border-radius: 60px;
@@ -105,11 +105,13 @@ a {
   color: #fff;
   display: flex;
   align-items: center;
-  text-decoration: none;
+  /* text-decoration: none; */
   padding: 0.5rem 1rem;
+  width: 180px;
   height: 100%;
 }
 
 .out-text {
   color: white;
+  width: 80px;
 }
