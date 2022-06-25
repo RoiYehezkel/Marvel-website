@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Movies from "./pages/Movies";
 import WatchList from "./pages/WatchList";
 import SignUp from "./pages/SignUp";
+import Footer from "./components/footer/Footer.js";
 
 function App() {
   const marvel = [
@@ -403,6 +404,13 @@ function App() {
       time: "119 min",
     },
   ];
+  const [movies, setMovies] = useState([...marvel]);
+  const categories = [
+    "All",
+    ...marvel
+      .map((p) => p.category)
+      .filter((value, index, array) => array.indexOf(value) === index),
+  ];
 
   const [signed, setSigned] = useState(false);
   const [name, setName] = useState("");
@@ -414,6 +422,19 @@ function App() {
       setName(user.substring(0, 4) + "...");
     }
   };
+  const moviesSelect = (category) => {
+    if (category === "All") setMovies(marvel);
+    else setMovies(marvel.filter((movie) => movie.category === category));
+  };
+  const serachForMovie = (val) => {
+    if (val === "clear") setMovies(marvel);
+    else
+      setMovies(
+        marvel.filter((movie) =>
+          movie.title.toLowerCase().includes(val.toLowerCase())
+        )
+      );
+  };
 
   return (
     <loginContext.Provider
@@ -422,18 +443,28 @@ function App() {
         signed: signed,
         setUserName: setUserName,
         name: name,
-        marvel: marvel,
+        movies: movies,
       }}
     >
       <Router>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="movies" element={<Movies />} />
+          <Route
+            path="movies"
+            element={
+              <Movies
+                categories={categories}
+                select={moviesSelect}
+                search={serachForMovie}
+              />
+            }
+          />
           <Route path="watchlist" element={<WatchList />} />
           <Route path="sign-up" element={<SignUp />} />
         </Routes>
       </Router>
+      {/* <Footer /> */}
     </loginContext.Provider>
   );
 }

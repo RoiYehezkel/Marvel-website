@@ -107,11 +107,16 @@ a {
   align-items: center;
   /* text-decoration: none; */
   padding: 0.5rem 1rem;
-  width: 180px;
+  width: 170px;
   height: 100%;
 }
 
 .out-text {
+  align-items: center;
+  padding-bottom: 0.5rem;
   color: white;
-  width: 80px;
+  width: 100px;
+}
+.btn {
+  margin-bottom: 0.5rem;
 }

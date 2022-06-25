@@ -47,13 +47,13 @@ import loginContext from "../../context/loginContext";
 //   );
 // }
 function Cards() {
-  const { marvel } = useContext(loginContext);
+  const { movies } = useContext(loginContext);
   return (
     <div class="cards">
       <div class="cards-container">
         <div class="cards-wrapper">
           <ul class="cards-item">
-            {marvel.map((movie) => (
+            {movies.map((movie) => (
               <CardItem data={movie} />
             ))}
           </ul>

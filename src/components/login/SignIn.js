@@ -22,9 +22,14 @@ function SignIn() {
       </Link>
     </>
   ) : (
-    <>
-      <Button buttonStyle="btn--outline">SIGN IN</Button>
-    </>
+    // <>
+    //   <Button buttonStyle="btn--outline">SIGN IN</Button>
+    // </>
+    <Link to="/sign-up">
+      <button type="button" class="btn btn-outline-light">
+        SIGN IN
+      </button>
+    </Link>
   );
 }
 
