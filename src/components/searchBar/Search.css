@@ -9,7 +9,7 @@
 .search-wrapper {
   display: flex;
   position: relative;
-  left: 10%;
+  left: 7%;
   top: 30%;
 }
 .search {
@@ -26,6 +26,7 @@
 
 .clear-btn {
   margin: auto 0px auto 10px;
+  width: 60px;
 }
 .btn-search {
   background-color: transparent;
