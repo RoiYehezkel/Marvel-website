@@ -1,6 +1,6 @@
 .cards {
   padding: 2rem 4rem;
-  background: #fff;
+  background: rgb(27, 73, 223);
 }
 
 h1 {
@@ -34,11 +34,14 @@ h1 {
   border-radius: 10px;
 }
 .cards-item {
+  position: relative;
   display: grid;
+  overflow: hidden;
   grid-template-columns: repeat(7, 1fr);
   text-align: center;
-  width: 80%;
+  /* width: 100%; */
   flex: 1;
+  width: 200px;
   margin: 0.5rem 1rem;
   border-radius: 10px;
 }
@@ -86,10 +89,9 @@ h1 {
 }
 
 .cards-item-img {
-  width: 200px;
+  width: 201px;
   display: block;
   object-fit: cover;
-
   transition: all 0.2s linear;
 }
 
@@ -118,6 +120,56 @@ h1 {
   right: 0;
   text-align: center;
   bottom: 2%;
+}
+
+.movie-overview {
+  background-color: rgb(8, 8, 82);
+  color: white;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.1);
+  font-size: 0.7rem;
+  padding: 0.5rem;
+  position: absolute;
+  width: 200px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  height: 80%;
+  max-width: 100%;
+  transform: translateY(102%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.cards-item:hover .movie-overview {
+  transform: translateY(0%);
+}
+
+.footer-card-container {
+  position: absolute;
+  bottom: 5%;
+  width: 184px;
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  padding: 10px 5px;
+}
+.run-time-container {
+  position: relative;
+  width: 40%;
+}
+.rating-container {
+  position: relative;
+  margin-left: auto;
+  width: 40%;
+}
+.footer-card-header {
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+.footer-card-info {
+  font-size: 0.7rem;
 }
 
 @media only screen and (min-width: 1200px) {

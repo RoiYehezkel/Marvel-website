@@ -9,21 +9,19 @@ function CardItem(props) {
     <>
       <li class="cards-item">
         {/* <Link> */}
-        <button class="cards-item-link">
-          <button class="cards-item-pic-wrap">
+        <div class="cards-item-link">
+          <div class="cards-item-pic-wrap">
             <img
               class="cards-item-img"
               src={props.data.image}
               alt={props.data.title}
             />
-          </button>
-
+          </div>
           <div class="cards-item-info">
             <h5 class="cards-item-text">{props.data.title}</h5>
-
             <h6 class="cards-item-date">{props.data.date}</h6>
           </div>
-        </button>
+        </div>
         {/* </Link> */}
         <div class="add-btn-wrapper">
           <button class="add-btn" onClick={handleClick}>
@@ -33,6 +31,20 @@ function CardItem(props) {
               }
             ></i>
           </button>
+        </div>
+        <div class="movie-overview">
+          <h2>Overview:</h2>
+          <p>{props.data.description}</p>
+          <div class="footer-card-container">
+            <div class="run-time-container">
+              <h5 class="footer-card-header">RUN TIME</h5>
+              <h6 class="footer-card-info">{props.data.time}</h6>
+            </div>
+            <div class="rating-container">
+              <h5 class="footer-card-header">RATING</h5>
+              <h6 class="footer-card-info">{props.data.rating}</h6>
+            </div>
+          </div>
         </div>
       </li>
     </>

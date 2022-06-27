@@ -68,7 +68,7 @@ function Footer() {
               <i class="fab fa-typo3" />
             </Link>
           </div>
-          <small class="website-rights">TRVL © 2020</small>
+          <small class="website-rights">ROI YEHEZKEL © 2022</small>
           <div class="social-icons">
             <Link
               class="social-icon-link facebook"
