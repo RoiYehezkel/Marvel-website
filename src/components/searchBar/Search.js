@@ -25,7 +25,7 @@ function Search(props) {
             props.search(inputValue);
           }}
         >
-          <i class="fa-solid fa-magnifying-glass search-logo"></i>
+          <i class="fa-solid fa-magnifying-glass fa-xl search-logo"></i>
         </button>
         <button
           class="btn btn-outline-dark clear-btn"
