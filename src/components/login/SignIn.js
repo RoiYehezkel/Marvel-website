@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import loginContext from "../../context/loginContext";
+import GlobalContext from "../../globalContext/GlobalContext";
 import "./Login.css";
 
 function SignIn() {
-  const { setLogin, signed, name } = useContext(loginContext);
+  const { setLogin, signed, name } = useContext(GlobalContext);
   return signed ? (
     <div class="welcome-text">
       <h4 class="hello-text">Hello {name}!</h4>

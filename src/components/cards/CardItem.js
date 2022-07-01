@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Cards.css";
+import { useContext } from "react";
+import GlobalContext from "../../globalContext/GlobalContext";
 
 function CardItem(props) {
-  const [click, setClick] = useState(false);
-  const handleClick = () => setClick(!click);
+  const { handleMovieToWatchlist, watchlist } = useContext(GlobalContext);
+  let storedMovie = watchlist.find((o) => o.id === props.data.id);
+  const watchlistDisabled = storedMovie ? true : false;
+  const handleClick = () => {
+    if (watchlistDisabled === false) handleMovieToWatchlist(props.data, "add");
+    else handleMovieToWatchlist(props.data, "remove");
+  };
 
   return (
     <>
@@ -28,7 +35,9 @@ function CardItem(props) {
           <button class="add-btn" onClick={handleClick}>
             <i
               class={
-                click ? "fa-solid fa-minus fa-2xl" : "fa-solid fa-plus fa-2xl"
+                watchlistDisabled
+                  ? "fa-solid fa-minus fa-2xl"
+                  : "fa-solid fa-plus fa-2xl"
               }
             ></i>
           </button>

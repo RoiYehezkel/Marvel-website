@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import React from "react";
 import { useContext } from "react";
-import loginContext from "../../context/loginContext";
+import GlobalContext from "../../globalContext/GlobalContext";
 // import React, { useState } from "react";
 import "./Login.css";
 
 function Login() {
-  const { setLogin, setUserName } = useContext(loginContext);
+  const { setLogin, setUserName } = useContext(GlobalContext);
   let name = "";
   return (
     <div class="login">

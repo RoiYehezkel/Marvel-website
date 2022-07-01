@@ -1,11 +1,12 @@
 import React from "react";
 import "../App.css";
 import Footer from "../components/footer/Footer";
+import Cards from "../components/cards/Cards";
 
-export default function WatchList() {
+export default function WatchList(props) {
   return (
     <>
-      <h1 className="products">PRODUCTS</h1>
+      <Cards movies={props.watchlist} />
       <Footer />
     </>
   );

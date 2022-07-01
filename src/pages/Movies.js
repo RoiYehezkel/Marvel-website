@@ -13,7 +13,7 @@ export default function Movies(props) {
         select={props.select}
         search={props.search}
       />
-      <Cards />
+      <Cards movies={props.movies} />
       <Footer />
     </>
   );

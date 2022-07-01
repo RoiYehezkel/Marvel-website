@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Navbar from "./components/navbar/Navbar.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import loginContext from "./context/loginContext";
+import loginContext from "./globalContext/GlobalContext";
 import "./App.css";
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
 import WatchList from "./pages/WatchList";
 import SignUp from "./pages/SignUp";
 import Footer from "./components/footer/Footer.js";
+import GlobalContext from "./globalContext/GlobalContext";
 
 function App() {
   const marvel = [
@@ -20,9 +21,7 @@ function App() {
       category: "stage one",
       image:
         "https://terrigen-cdn-dev.marvel.com/content/prod/1x/ironman_lob_crd_01_3.jpg",
-      trailer:
-        "http://f1.media.brightcove.com/4/5359769168001/5359769168001_6101116661001_5786306590001.mp4?pubId=5359769168001&videoId=5786306590001",
-      rating: "PG-13",
+      rating: "7.1/10",
       time: "126 min",
     },
     {
@@ -34,9 +33,7 @@ function App() {
       category: "stage one",
       image:
         "https://terrigen-cdn-dev.marvel.com/content/prod/1x/theincrediblehulk_lob_crd_01_2.jpg",
-      trailer:
-        "http://f1.media.brightcove.com/4/5359769168001/5359769168001_5786825321001_5786823800001.mp4?pubId=5359769168001&videoId=5786823800001",
-      rating: "PG-13",
+      rating: "6.6/10",
       time: "112 min",
     },
     {
@@ -48,9 +45,7 @@ function App() {
       category: "stage one",
       image:
         "https://terrigen-cdn-dev.marvel.com/content/prod/1x/ironman2_lob_crd_01_3.jpg",
-      trailer:
-        "http://f1.media.brightcove.com/4/5359769168001/5359769168001_5786631049001_5786616628001.mp4?pubId=5359769168001&videoId=5786616628001",
-      rating: "PG-13",
+      rating: "6.9/10",
       time: "124 min",
     },
     {
@@ -405,6 +400,7 @@ function App() {
     },
   ];
   const [movies, setMovies] = useState([...marvel]);
+  const [watchlist, setWatchlist] = useState([]);
   const categories = [
     "All",
     ...marvel
@@ -435,15 +431,32 @@ function App() {
         )
       );
   };
+  const handleMovieToWatchlist = (movie, purpose) => {
+    if (signed === true) {
+      if (purpose === "add") {
+        let storedMovie = watchlist.find((o) => o.id === movie.id);
+        const watchlistDisabled = storedMovie ? true : false;
+
+        if (watchlistDisabled === false) setWatchlist([...watchlist, movie]);
+      } else if (purpose === "remove") {
+        setWatchlist(
+          watchlist.filter((watchlistMovie) => watchlistMovie.id !== movie.id)
+        );
+      }
+    } else {
+      setWatchlist([]);
+    }
+  };
 
   return (
-    <loginContext.Provider
+    <GlobalContext.Provider
       value={{
-        setLogin: setLogin,
+        setLogin,
         signed: signed,
-        setUserName: setUserName,
+        setUserName,
         name: name,
-        movies: movies,
+        handleMovieToWatchlist,
+        watchlist: watchlist,
       }}
     >
       <Router>
@@ -457,15 +470,19 @@ function App() {
                 categories={categories}
                 select={moviesSelect}
                 search={serachForMovie}
+                movies={movies}
               />
             }
           />
-          <Route path="watchlist" element={<WatchList />} />
+          <Route
+            path="watchlist"
+            element={<WatchList watchlist={watchlist} />}
+          />
           <Route path="sign-up" element={<SignUp />} />
         </Routes>
       </Router>
       {/* <Footer /> */}
-    </loginContext.Provider>
+    </GlobalContext.Provider>
   );
 }
 
