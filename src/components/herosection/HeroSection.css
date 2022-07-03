@@ -18,15 +18,18 @@
 }
 
 .hero-container > h1 {
-  color: #fff;
+  /* color: rgb(252, 238, 229); */
+  color: white;
+  -webkit-text-stroke: 2px black;
   font-size: 100px;
   margin-top: -100px;
 }
 
 .hero-container > p {
+  -webkit-text-stroke: 2px black;
   margin-top: 8px;
-  color: #fff;
-  font-size: 32px;
+  color: white;
+  font-size: 50px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }

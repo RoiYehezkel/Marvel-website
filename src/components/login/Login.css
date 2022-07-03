@@ -92,15 +92,6 @@ input {
   padding-top: 25px;
 }
 
-.link {
-  padding-top: 40px;
-  font-size: 25px;
-  font-weight: 400;
-}
-
-a {
-  color: blue;
-}
 .welcome-text {
   color: #fff;
   display: flex;
@@ -116,7 +107,6 @@ a {
   align-items: center;
   padding-bottom: 0.5rem;
   color: white;
-  /* width: 100px; */
 }
 .btn {
   margin-bottom: 0.7rem;

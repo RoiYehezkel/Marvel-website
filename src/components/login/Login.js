@@ -50,9 +50,6 @@ function Login() {
               </Link>
             </div>
           </div>
-          <p class="link">
-            {/* <a href="#">Forgot password ?</a> Or <a href="#">Sign Up</a> */}
-          </p>
         </div>
       </div>
     </div>

@@ -1,6 +1,5 @@
 import React from "react";
 import CardItem from "./CardItem";
-import { useContext } from "react";
 
 function Cards(props) {
   return (

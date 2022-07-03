@@ -5,17 +5,15 @@ import "./Footer.css";
 function Footer() {
   return (
     <div class="footer-container">
-      <section className="footer-subscription">
-        <p className="footer-subscription-heading">
+      <section class="footer-subscription">
+        <p class="footer-subscription-heading">
           Join our community to get the latest news
         </p>
-        <p className="footer-subscription-text">
-          You can unsubscribe at any time.
-        </p>
-        <div className="input-areas">
+        <p class="footer-subscription-text">You can unsubscribe at any time.</p>
+        <div class="input-areas">
           <form>
             <input
-              className="footer-input"
+              class="footer-input"
               name="email"
               type="email"
               placeholder="Your Email"
@@ -27,7 +25,7 @@ function Footer() {
       <section class="social-media">
         <div class="social-media-wrap">
           <div class="footer-logo">
-            <Link to="/" className="social-logo">
+            <Link to="/" class="social-logo">
               <img
                 src="./images/marvel.png"
                 class="marvel-logo"

@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import "./Cards.css";
 import { useContext } from "react";
 import GlobalContext from "../../globalContext/GlobalContext";
@@ -16,7 +15,6 @@ function CardItem(props) {
   return (
     <>
       <li class="cards-item">
-        {/* <Link> */}
         <div class="cards-item-link">
           <div class="cards-item-pic-wrap">
             <img
@@ -30,7 +28,6 @@ function CardItem(props) {
             <h6 class="cards-item-date">{props.data.date}</h6>
           </div>
         </div>
-        {/* </Link> */}
         <div class="add-btn-wrapper">
           <button class="add-btn" onClick={handleClick}>
             <i
