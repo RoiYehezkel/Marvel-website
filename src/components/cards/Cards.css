@@ -65,7 +65,7 @@ h1 {
   flex-flow: column;
   width: 100%;
   border: none;
-  background-color: white;
+  background-color: rgb(43, 42, 68);
   box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
   -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
   filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
@@ -106,13 +106,13 @@ h1 {
 }
 
 .cards-item-text {
-  color: #252e48;
+  color: #bdc8ea;
   font-size: 18px;
   line-height: 24px;
 }
 
 .cards-item-date {
-  color: blue;
+  color: rgb(126, 126, 174);
   font-size: 0.8rem;
   position: absolute;
   margin-left: auto;

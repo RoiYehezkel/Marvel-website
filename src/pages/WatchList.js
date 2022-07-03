@@ -2,10 +2,19 @@ import React from "react";
 import "../App.css";
 import Footer from "../components/footer/Footer";
 import Cards from "../components/cards/Cards";
-// import WatchlistSection from "../components/watchlistsection/WatchlistSection";
 
 export default function WatchList(props) {
-  return (
+  let emptyList = props.watchlist.length === 0 ? true : false;
+  return emptyList ? (
+    <>
+      <img
+        class="background-img-watchlist-empty"
+        src="./images/empty.png"
+        alt="empty-logo"
+      />
+      <Footer />
+    </>
+  ) : (
     <>
       <img
         class="background-img-watchlist"
@@ -13,7 +22,6 @@ export default function WatchList(props) {
         alt="avengers-logo"
       />
       <Cards movies={props.watchlist} />
-      {/* <WatchlistSection movies={props.watchlist} /> */}
       <Footer />
     </>
   );

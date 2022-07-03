@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { useContext } from "react";
 import GlobalContext from "../../globalContext/GlobalContext";
-// import React, { useState } from "react";
 import "./Login.css";
 
 function Login() {
@@ -43,7 +42,7 @@ function Login() {
                   onClick={() => {
                     setLogin();
                     setUserName(name);
-                    alert("Succeeded");
+                    alert("You've logged in successfully");
                   }}
                 >
                   Login

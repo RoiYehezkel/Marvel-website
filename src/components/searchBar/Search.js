@@ -38,7 +38,12 @@ function Search(props) {
         </button>
         <div class="filtering-container">
           <label class="collection-sort">Filter by:</label>
-          <select onChange={(e) => props.select(e.target.value)}>
+          <select
+            onChange={(e) => {
+              setInputValue("");
+              props.select(e.target.value);
+            }}
+          >
             <Option category={props.categories} />
           </select>
         </div>

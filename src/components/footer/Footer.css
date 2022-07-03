@@ -13,7 +13,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-
   margin-bottom: 24px;
   padding: 24px;
   color: #fff;
@@ -36,53 +35,13 @@
 
 .footer-input {
   padding: 8px 20px;
-  border-radius: 2px;
+  border-radius: 5px;
   margin-right: 10px;
   outline: none;
   border: none;
   font-size: 18px;
   margin-bottom: 16px;
   border: 1px solid #fff;
-}
-
-.footer-links {
-  width: 100%;
-  max-width: 1000px;
-  display: flex;
-  justify-content: center;
-}
-
-.footer-link-wrapper {
-  display: flex;
-}
-
-.footer-link-items {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 16px;
-  text-align: left;
-  width: 160px;
-  box-sizing: border-box;
-}
-
-.footer-link-items h2 {
-  margin-bottom: 16px;
-}
-
-.footer-link-items > h2 {
-  color: #fff;
-}
-
-.footer-link-items a {
-  color: #fff;
-  text-decoration: none;
-  margin-bottom: 0.5rem;
-}
-
-.footer-link-items a:hover {
-  color: #e9e9e9;
-  transition: 0.3s ease-out;
 }
 
 .footer-email-form h2 {
@@ -112,6 +71,10 @@
   margin: 40px auto 0 auto;
 }
 
+.marvel-logo {
+  width: 120px;
+}
+
 .social-icons {
   display: flex;
   justify-content: space-between;
@@ -137,10 +100,6 @@
 }
 
 @media screen and (max-width: 820px) {
-  .footer-links {
-    padding-top: 2rem;
-  }
-
   .footer-input {
     width: 100%;
   }
@@ -149,14 +108,7 @@
     width: 100%;
   }
 
-  .footer-link-wrapper {
-    flex-direction: column;
-  }
-
   .social-media-wrap {
     flex-direction: column;
   }
-}
-
-@media screen and (max-width: 768px) {
 }

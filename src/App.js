@@ -6,9 +6,7 @@ import Home from "./pages/Home";
 import Movies from "./pages/Movies";
 import WatchList from "./pages/WatchList";
 import SignUp from "./pages/SignUp";
-// import Footer from "./components/footer/Footer.js";
 import GlobalContext from "./globalContext/GlobalContext";
-import Footer from "./components/footer/Footer.js";
 import Loading from "./components/loading/Loading.js";
 let marvel = [];
 
@@ -412,19 +410,15 @@ function App() {
       );
   };
   const handleMovieToWatchlist = (movie, purpose) => {
-    if (signed === true) {
-      if (purpose === "add") {
-        let storedMovie = watchlist.find((o) => o.id === movie.id);
-        const watchlistDisabled = storedMovie ? true : false;
+    if (purpose === "add") {
+      let storedMovie = watchlist.find((o) => o.id === movie.id);
+      const watchlistDisabled = storedMovie ? true : false;
 
-        if (watchlistDisabled === false) setWatchlist([...watchlist, movie]);
-      } else if (purpose === "remove") {
-        setWatchlist(
-          watchlist.filter((watchlistMovie) => watchlistMovie.id !== movie.id)
-        );
-      }
-    } else {
-      setWatchlist([]);
+      if (watchlistDisabled === false) setWatchlist([...watchlist, movie]);
+    } else if (purpose === "remove") {
+      setWatchlist(
+        watchlist.filter((watchlistMovie) => watchlistMovie.id !== movie.id)
+      );
     }
   };
 
@@ -439,38 +433,32 @@ function App() {
         watchlist: watchlist,
       }}
     >
-      <div>
-        {load ? (
-          <Loading />
-        ) : (
-          <div>
-            <Router>
-              <Navbar />
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route
-                  path="movies"
-                  element={
-                    <Movies
-                      categories={categories}
-                      select={moviesSelect}
-                      search={serachForMovie}
-                      movies={movies}
-                    />
-                  }
+      {load ? (
+        <Loading />
+      ) : (
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="movies"
+              element={
+                <Movies
+                  categories={categories}
+                  select={moviesSelect}
+                  search={serachForMovie}
+                  movies={movies}
                 />
-                <Route
-                  path="watchlist"
-                  element={<WatchList watchlist={watchlist} />}
-                />
-                <Route path="sign-up" element={<SignUp />} />
-              </Routes>
-            </Router>
-          </div>
-        )}
-      </div>
-
-      {/* <Footer /> */}
+              }
+            />
+            <Route
+              path="watchlist"
+              element={<WatchList watchlist={watchlist} />}
+            />
+            <Route path="sign-up" element={<SignUp />} />
+          </Routes>
+        </Router>
+      )}
     </GlobalContext.Provider>
   );
 }

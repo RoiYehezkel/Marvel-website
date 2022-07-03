@@ -3,8 +3,10 @@ import "./Loading.css";
 
 function Loading() {
   return (
-    <div>
-      <video src="/videos/loading.mp4" autoPlay loop muted />
+    <div class="d-flex justify-content-center load">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
     </div>
   );
 }

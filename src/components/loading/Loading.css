@@ -1,7 +1,5 @@
-video {
-  /* object-fit: cover; */
-  width: 100%;
-  height: 100%;
-  /* position: fixed;
-    z-index: -1; */
+.load {
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
