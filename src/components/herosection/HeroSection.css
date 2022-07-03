@@ -1,13 +1,12 @@
-video {
+.background-img {
   object-fit: cover;
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: absolute;
   z-index: -1;
 }
 
 .hero-container {
-  /* background: url('/images/img-home.jpg') center center/cover no-repeat; */
   height: 100vh;
   width: 100%;
   display: flex;
@@ -36,8 +35,9 @@ video {
   margin-top: 32px;
 }
 
-.hero-btns .btn {
-  margin: 6px;
+.home-btn {
+  margin-right: 7px;
+  margin-left: 7px;
 }
 
 .fa-play-circle {

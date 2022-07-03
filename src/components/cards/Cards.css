@@ -1,6 +1,7 @@
 .cards {
   padding: 2rem 4rem;
-  background: rgb(27, 73, 223);
+  background: transparent;
+  min-height: 100vh;
 }
 
 h1 {

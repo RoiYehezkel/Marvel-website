@@ -5,7 +5,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <div className="footer-container">
+    <div class="footer-container">
       <section className="footer-subscription">
         <p className="footer-subscription-heading">
           Join the Adventure newsletter to receive our best vacation deals
@@ -25,7 +25,7 @@ function Footer() {
           </form>
         </div>
       </section>
-      <div class="footer-links">
+      {/* <div class="footer-links">
         <div className="footer-link-wrapper">
           <div class="footer-link-items">
             <h2>About Us</h2>
@@ -59,8 +59,8 @@ function Footer() {
             <Link to="/">Twitter</Link>
           </div>
         </div>
-      </div>
-      <section class="social-media">
+      </div> */}
+      {/* <section class="social-media">
         <div class="social-media-wrap">
           <div class="footer-logo">
             <Link to="/" className="social-logo">
@@ -112,7 +112,7 @@ function Footer() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

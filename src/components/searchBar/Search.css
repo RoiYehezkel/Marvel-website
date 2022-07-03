@@ -1,12 +1,13 @@
 .search-container {
-  margin-top: 80px;
-  height: 100px;
+  /* margin-top: 80px; */
+  height: 70px;
   background-color: rgb(108, 110, 219);
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 .search-wrapper {
+  width: 70%;
   display: flex;
   position: relative;
   left: 7%;

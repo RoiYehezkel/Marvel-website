@@ -1,10 +1,8 @@
 import React from "react";
 import CardItem from "./CardItem";
 import { useContext } from "react";
-import GlobalContext from "../../globalContext/GlobalContext";
 
 function Cards(props) {
-  // const { movies } = useContext(loginContext);
   return (
     <div class="cards">
       <div class="cards-container">

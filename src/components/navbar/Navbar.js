@@ -14,8 +14,6 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            {/* TRVL
-            <i class="fab fa-typo3" /> */}
             <img
               class="logo"
               src="./images/avengers2.jpg"

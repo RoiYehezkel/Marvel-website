@@ -7,7 +7,11 @@ import Footer from "../components/footer/Footer";
 export default function Movies(props) {
   return (
     <>
-      {/* <h1 className="services">SERVICES</h1> */}
+      <img
+        class="background-img-movies"
+        src="./images/avengers3.jpg"
+        alt="avengers-logo"
+      />
       <Search
         categories={props.categories}
         select={props.select}
