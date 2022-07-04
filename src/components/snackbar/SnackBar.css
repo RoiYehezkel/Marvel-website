@@ -1,0 +1,73 @@
+.snackbar {
+  position: fixed;
+  left: 2%;
+  bottom: 3%;
+  width: 350px;
+  height: 60px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  z-index: 1000;
+  color: white;
+}
+
+.success {
+  background-color: green;
+}
+
+.error {
+  background-color: red;
+}
+
+.info {
+  background-color: blue;
+}
+
+.warning {
+  background-color: orange;
+}
+
+.snackbar .symbol-container {
+  flex: 20%;
+}
+
+.symbol {
+  margin: auto;
+}
+
+.snackbar .message {
+  flex: 80%;
+  text-align: start;
+  font-weight: bold;
+}
+
+#show {
+  visibility: visible;
+  animation: fadeIn 0.5s, fadeOut 0.5s 2.5s;
+}
+#hide {
+  visibility: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}

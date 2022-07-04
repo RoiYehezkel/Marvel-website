@@ -42,7 +42,6 @@ function Login() {
                   onClick={() => {
                     setLogin();
                     setUserName(name);
-                    alert("You've logged in successfully");
                   }}
                 >
                   Login

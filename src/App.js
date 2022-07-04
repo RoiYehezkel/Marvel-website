@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Navbar from "./components/navbar/Navbar.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
@@ -8,6 +8,7 @@ import WatchList from "./pages/WatchList";
 import SignUp from "./pages/SignUp";
 import GlobalContext from "./globalContext/GlobalContext";
 import Loading from "./components/loading/Loading.js";
+import SnackBar from "./components/snackbar/SnackBar.js";
 let marvel = [];
 
 function App() {
@@ -388,7 +389,15 @@ function App() {
 
   const [signed, setSigned] = useState(false);
   const [name, setName] = useState("");
-  const setLogin = () => setSigned(!signed);
+  const setLogin = () => {
+    setSigned(!signed);
+    setType("info");
+    if (signed === true) setMessage("You have successfully logged out");
+    else {
+      setMessage("You've logged in successfully");
+    }
+    snackbarRef.current.show();
+  };
   const setUserName = (user) => {
     if (user.length <= 7) {
       setName(user);
@@ -409,16 +418,33 @@ function App() {
         )
       );
   };
-  const handleMovieToWatchlist = (movie, purpose) => {
-    if (purpose === "add") {
-      let storedMovie = watchlist.find((o) => o.id === movie.id);
-      const watchlistDisabled = storedMovie ? true : false;
+  const snackbarRef = useRef(null);
+  const [message, setMessage] = useState("");
+  const [type, setType] = useState("warning");
 
-      if (watchlistDisabled === false) setWatchlist([...watchlist, movie]);
-    } else if (purpose === "remove") {
-      setWatchlist(
-        watchlist.filter((watchlistMovie) => watchlistMovie.id !== movie.id)
-      );
+  const handleMovieToWatchlist = (movie, purpose) => {
+    if (signed) {
+      if (purpose === "add") {
+        let storedMovie = watchlist.find((o) => o.id === movie.id);
+        const watchlistDisabled = storedMovie ? true : false;
+        setMessage("The movie successfully added to watchlist");
+        setType("success");
+        snackbarRef.current.show();
+        if (watchlistDisabled === false) setWatchlist([...watchlist, movie]);
+      } else if (purpose === "remove") {
+        setWatchlist(
+          watchlist.filter((watchlistMovie) => watchlistMovie.id !== movie.id)
+        );
+        setMessage("The movie removed from the watchlist");
+        setType("warning");
+        snackbarRef.current.show();
+      }
+    } else {
+      if (purpose === "add") {
+        setMessage("You must first log in to the site");
+        setType("error");
+        snackbarRef.current.show();
+      } else setWatchlist([]);
     }
   };
 
@@ -459,6 +485,7 @@ function App() {
           </Routes>
         </Router>
       )}
+      <SnackBar ref={snackbarRef} message={message} type={type} />
     </GlobalContext.Provider>
   );
 }

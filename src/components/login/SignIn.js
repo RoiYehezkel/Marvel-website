@@ -5,15 +5,16 @@ import GlobalContext from "../../globalContext/GlobalContext";
 import "./Login.css";
 
 function SignIn() {
-  const { setLogin, signed, name } = useContext(GlobalContext);
+  const { setLogin, signed, name, handleMovieToWatchlist } =
+    useContext(GlobalContext);
   return signed ? (
     <div class="welcome-text">
       <h4 class="hello-text">Hello {name}!</h4>
       <Link
         to="/"
         onClick={() => {
-          alert("You have successfully logged out");
           setLogin();
+          handleMovieToWatchlist(null, "remove");
         }}
         class="out-text"
       >
