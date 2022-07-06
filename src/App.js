@@ -391,12 +391,15 @@ function App() {
   const [name, setName] = useState("");
   const setLogin = () => {
     setSigned(!signed);
-    setType("info");
-    if (signed === true) setMessage("You have successfully logged out");
-    else {
+    if (signed === true) {
+      setType("info");
+      setMessage("You have successfully logged out");
+      snackbarRef.current.show();
+    } else {
+      setType("info");
       setMessage("You've logged in successfully");
+      snackbarRef.current.show();
     }
-    snackbarRef.current.show();
   };
   const setUserName = (user) => {
     if (user.length <= 7) {
@@ -431,20 +434,22 @@ function App() {
         setType("success");
         snackbarRef.current.show();
         if (watchlistDisabled === false) setWatchlist([...watchlist, movie]);
-      } else if (purpose === "remove") {
+      } else if (purpose === "remove" && movie !== null) {
         setWatchlist(
           watchlist.filter((watchlistMovie) => watchlistMovie.id !== movie.id)
         );
         setMessage("The movie removed from the watchlist");
         setType("warning");
         snackbarRef.current.show();
+      } else {
+        setWatchlist([]);
       }
     } else {
       if (purpose === "add") {
         setMessage("You must first log in to the site");
         setType("error");
         snackbarRef.current.show();
-      } else setWatchlist([]);
+      }
     }
   };
 

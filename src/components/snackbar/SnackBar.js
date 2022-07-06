@@ -3,12 +3,13 @@ import "./SnackBar.css";
 
 const SnackBar = forwardRef((props, ref) => {
   const [showSnackbar, setShowSnackbar] = useState(false);
+
   useImperativeHandle(ref, () => ({
     show() {
       setShowSnackbar(true);
       setTimeout(() => {
         setShowSnackbar(false);
-      }, 1000);
+      }, 1400);
     },
   }));
 
