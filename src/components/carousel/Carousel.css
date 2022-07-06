@@ -1,0 +1,13 @@
+.heros-container {
+  padding: 7% 15%;
+  text-align: center;
+  background-color: #2476d4;
+  color: #fff;
+  height: 400px;
+}
+
+.testimonial-image {
+  width: 120px;
+  border-radius: 100%;
+  margin: 20px;
+}
