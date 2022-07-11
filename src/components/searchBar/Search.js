@@ -9,7 +9,7 @@ function Search(props) {
       <div class="search-wrapper">
         <input
           type="text"
-          placeholder="search"
+          placeholder="Search for movie"
           value={inputValue}
           class="search"
           onChange={(e) => {

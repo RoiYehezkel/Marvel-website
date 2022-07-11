@@ -365,7 +365,13 @@ function App() {
   const [movies, setMovies] = useState([...marvel]);
   const [watchlist, setWatchlist] = useState([]);
   const [load, setLoad] = useState(true);
+  const [signed, setSigned] = useState(false);
+  const [name, setName] = useState("");
+  const snackbarRef = useRef(null);
+  const [message, setMessage] = useState("");
+  const [type, setType] = useState("warning");
 
+  // calling and get data from server
   const fetchData = () => {
     fetch("http://localhost:8000/movies")
       .then((res) => res.json())
@@ -380,6 +386,7 @@ function App() {
     fetchData();
   }, []);
 
+  // create list of categories of the movies
   const categories = [
     "All",
     ...marvel
@@ -387,8 +394,7 @@ function App() {
       .filter((value, index, array) => array.indexOf(value) === index),
   ];
 
-  const [signed, setSigned] = useState(false);
-  const [name, setName] = useState("");
+  // set login message to render in the website
   const setLogin = () => {
     setSigned(!signed);
     if (signed === true) {
@@ -401,6 +407,8 @@ function App() {
       snackbarRef.current.show();
     }
   };
+
+  // set the username after login
   const setUserName = (user) => {
     if (user.length <= 7) {
       setName(user);
@@ -408,10 +416,14 @@ function App() {
       setName(user.substring(0, 4) + "...");
     }
   };
+
+  // function to filter the movies list by categories
   const moviesSelect = (category) => {
     if (category === "All") setMovies(marvel);
     else setMovies(marvel.filter((movie) => movie.category === category));
   };
+
+  // function to filter the movies list by the search bar
   const serachForMovie = (val) => {
     if (val === "clear") setMovies(marvel);
     else
@@ -421,10 +433,8 @@ function App() {
         )
       );
   };
-  const snackbarRef = useRef(null);
-  const [message, setMessage] = useState("");
-  const [type, setType] = useState("warning");
 
+  // handele add movie to watchlist with diffrent cases
   const handleMovieToWatchlist = (movie, purpose) => {
     if (signed) {
       if (purpose === "add") {
@@ -441,7 +451,9 @@ function App() {
         setMessage("The movie removed from the watchlist");
         setType("warning");
         snackbarRef.current.show();
-      } else {
+      }
+      // the user log out from the website
+      else {
         setWatchlist([]);
       }
     } else {
