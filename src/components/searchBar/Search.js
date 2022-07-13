@@ -52,7 +52,9 @@ function Search(props) {
   );
 }
 function Option(props) {
-  const options = props.category.map((prop) => <option>{prop}</option>);
+  const options = props.category.map((prop) => (
+    <option key={prop}>{prop}</option>
+  ));
   return options;
 }
 export default Search;
