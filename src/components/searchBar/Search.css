@@ -10,7 +10,7 @@
   display: flex;
   position: relative;
   left: 7%;
-  top: 30%;
+  top: 20%;
 }
 .search {
   margin: auto 0px;
@@ -42,4 +42,9 @@
 .collection-sort {
   margin: auto;
   padding-right: 5px;
+}
+@media only screen and (max-width: 800px) {
+  .search-wrapper {
+    left: 2%;
+  }
 }
