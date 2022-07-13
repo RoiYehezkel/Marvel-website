@@ -4,6 +4,7 @@ import "./Search.css";
 
 function Search(props) {
   const [inputValue, setInputValue] = useState("");
+  const [filterValue, setFilterValue] = useState("All");
   return (
     <div class="search-container">
       <div class="search-wrapper">
@@ -16,13 +17,17 @@ function Search(props) {
             setInputValue(e.target.value);
           }}
           onKeyPress={(e) => {
-            if (e.key === "Enter") props.search(inputValue);
+            if (e.key === "Enter") {
+              props.search(inputValue);
+              setFilterValue("All");
+            }
           }}
         />
         <button
           class="btn-search"
           onClick={() => {
             props.search(inputValue);
+            setFilterValue("All");
           }}
         >
           <i class="fa-solid fa-magnifying-glass fa-xl search-logo"></i>
@@ -32,6 +37,7 @@ function Search(props) {
           onClick={() => {
             props.search("clear");
             setInputValue("");
+            setFilterValue("All");
           }}
         >
           Clear
@@ -39,8 +45,10 @@ function Search(props) {
         <div class="filtering-container">
           <label class="collection-sort">Filter by:</label>
           <select
+            value={filterValue}
             onChange={(e) => {
               setInputValue("");
+              setFilterValue(e.target.value);
               props.select(e.target.value);
             }}
           >
