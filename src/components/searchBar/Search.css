@@ -44,7 +44,18 @@
   padding-right: 5px;
 }
 @media only screen and (max-width: 800px) {
+  .search-container {
+    height: 115px;
+  }
   .search-wrapper {
-    left: 2%;
+    top: 7%;
+    left: 20%;
+  }
+  .collection-sort {
+    width: 80px;
+  }
+  .filtering-container {
+    top: 60px;
+    left: -70%;
   }
 }

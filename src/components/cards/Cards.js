@@ -9,7 +9,7 @@ function Cards(props) {
         <div class="cards-wrapper">
           <ul class="cards-items">
             {props.movies.map((movie) => (
-              <CardItem data={movie} />
+              <CardItem key={movie.id} data={movie} />
             ))}
           </ul>
         </div>

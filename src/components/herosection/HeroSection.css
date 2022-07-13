@@ -18,7 +18,6 @@
 }
 
 .hero-container > h1 {
-  /* color: rgb(252, 238, 229); */
   color: white;
   -webkit-text-stroke: 2px black;
   font-size: 100px;
