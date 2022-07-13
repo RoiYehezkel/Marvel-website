@@ -8,37 +8,45 @@ function Login() {
   const { setLogin, setUserName } = useContext(GlobalContext);
   let name = "";
   return (
-    <div class="login">
-      <div class="login-container">
+    <div className="login">
+      <div className="login-container">
         <div>
-          <div class="imgs">
-            <div class="container-image">
-              <img src="./images/login.png" alt="profile" class="profile-img" />
+          <div className="imgs">
+            <div className="container-image">
+              <img
+                src="./images/login.png"
+                alt="profile"
+                className="profile-img"
+              />
             </div>
           </div>
           <div>
-            <h1 class="header">Login Page</h1>
-            <div class="input-icons">
+            <h1 className="header">Login Page</h1>
+            <div className="input-icons">
               <div>
-                <i class="fa-solid fa-user icon"></i>
+                <i className="fa-solid fa-user icon"></i>
                 <input
                   type="text"
                   placeholder="user-name"
-                  class="name"
+                  className="name"
                   onChange={(e) => {
                     name = e.target.value;
                   }}
                 />
               </div>
-              <div class="second-input">
-                <i class="fa-solid fa-lock icon"></i>
-                <input type="password" placeholder="password" class="name" />
+              <div className="second-input">
+                <i className="fa-solid fa-lock icon"></i>
+                <input
+                  type="password"
+                  placeholder="password"
+                  className="name"
+                />
               </div>
             </div>
-            <div class="login-button-wrapper">
+            <div className="login-button-wrapper">
               <Link to="/">
                 <button
-                  class="btn login-button"
+                  className="btn login-button"
                   onClick={() => {
                     setLogin();
                     setUserName(name);

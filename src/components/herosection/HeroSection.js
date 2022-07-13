@@ -5,23 +5,23 @@ import "./HeroSection.css";
 
 function HeroSection() {
   return (
-    <div class="hero-container">
+    <div className="hero-container">
       <img
-        class="background-img"
+        className="background-img"
         src="./images/avengers1.jpg"
         alt="avengers-logo"
       />
       <h1>ADVENTURE AWAITS</h1>
       <p>What are you waiting for</p>
-      <div class="heros-btn">
+      <div className="heros-btn">
         <Link to="/movies">
-          <button class="btn btn-outline-light btn-lg home-btn">
+          <button className="btn btn-outline-light btn-lg home-btn">
             GET STARTED
           </button>
         </Link>
-        <button class="btn btn-dark btn-lg home-btn">
+        <button className="btn btn-dark btn-lg home-btn">
           WATCH TRAILER
-          <i class="far fa-play-circle" />
+          <i className="far fa-play-circle" />
         </button>
       </div>
     </div>

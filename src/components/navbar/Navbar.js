@@ -11,31 +11,39 @@ function Navbar() {
 
   return (
     <>
-      <nav class="navbar">
-        <div class="navbar-container">
-          <Link to="/" class="navbar-logo" onClick={closeMobileMenu}>
+      <nav className="navbar">
+        <div className="navbar-container">
+          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             <img
-              class="logo"
+              className="logo"
               src="./images/avengers2.jpg"
               alt="avengers-logo"
             />
           </Link>
-          <div class="menu-icon" onClick={handleClick}>
-            <i class={click ? "fas fa-times" : "fas fa-bars"} />
+          <div className="menu-icon" onClick={handleClick}>
+            <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
-          <ul class={click ? "nav-menu active" : "nav-menu"}>
-            <li class="nav-item">
-              <Link to="/" class="nav-links" onClick={closeMobileMenu}>
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
                 Home
               </Link>
             </li>
-            <li class="nav-item">
-              <Link to="/movies" class="nav-links" onClick={closeMobileMenu}>
+            <li className="nav-item">
+              <Link
+                to="/movies"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
                 Movies
               </Link>
             </li>
-            <li class="nav-item">
-              <Link to="/watchlist" class="nav-links" onClick={closeMobileMenu}>
+            <li className="nav-item">
+              <Link
+                to="/watchlist"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
                 WatchList
               </Link>
             </li>

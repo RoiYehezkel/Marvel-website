@@ -6,13 +6,13 @@ function Search(props) {
   const [inputValue, setInputValue] = useState("");
   const [filterValue, setFilterValue] = useState("All");
   return (
-    <div class="search-container">
-      <div class="search-wrapper">
+    <div className="search-container">
+      <div className="search-wrapper">
         <input
           type="text"
           placeholder="Search for movie"
           value={inputValue}
-          class="search"
+          className="search"
           onChange={(e) => {
             setInputValue(e.target.value);
           }}
@@ -24,16 +24,16 @@ function Search(props) {
           }}
         />
         <button
-          class="btn-search"
+          className="btn-search"
           onClick={() => {
             props.search(inputValue);
             setFilterValue("All");
           }}
         >
-          <i class="fa-solid fa-magnifying-glass fa-xl search-logo"></i>
+          <i className="fa-solid fa-magnifying-glass fa-xl search-logo"></i>
         </button>
         <button
-          class="btn btn-outline-dark clear-btn"
+          className="btn btn-outline-dark clear-btn"
           onClick={() => {
             props.search("clear");
             setInputValue("");
@@ -42,8 +42,8 @@ function Search(props) {
         >
           Clear
         </button>
-        <div class="filtering-container">
-          <label class="collection-sort">Filter by:</label>
+        <div className="filtering-container">
+          <label className="collection-sort">Filter by:</label>
           <select
             value={filterValue}
             onChange={(e) => {

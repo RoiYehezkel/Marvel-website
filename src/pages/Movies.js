@@ -8,7 +8,7 @@ export default function Movies(props) {
   return (
     <>
       <img
-        class="background-img-movies"
+        className="background-img-movies"
         src="./images/avengers3.jpg"
         alt="avengers-logo"
       />

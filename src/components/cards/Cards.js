@@ -4,10 +4,10 @@ import "./Cards.css";
 
 function Cards(props) {
   return (
-    <div class="cards">
-      <div class="cards-container">
-        <div class="cards-wrapper">
-          <ul class="cards-items">
+    <div className="cards">
+      <div className="cards-container">
+        <div className="cards-wrapper">
+          <ul className="cards-items">
             {props.movies.map((movie) => (
               <CardItem key={movie.id} data={movie} />
             ))}

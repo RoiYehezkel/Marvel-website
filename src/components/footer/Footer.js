@@ -4,59 +4,73 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <div class="footer-container">
-      <section class="footer-subscription">
-        <p class="footer-subscription-heading">
+    <div className="footer-container">
+      <section className="footer-subscription">
+        <p className="footer-subscription-heading">
           Join our community to get the latest news
         </p>
-        <p class="footer-subscription-text">You can unsubscribe at any time.</p>
-        <div class="input-areas">
+        <p className="footer-subscription-text">
+          You can unsubscribe at any time.
+        </p>
+        <div className="input-areas">
           <form>
             <input
-              class="footer-input"
+              className="footer-input"
               name="email"
               type="email"
               placeholder="Your Email"
             />
-            <button class="btn btn-outline-light">Subscribe</button>
+            <button className="btn btn-outline-light">Subscribe</button>
           </form>
         </div>
       </section>
-      <section class="social-media">
-        <div class="social-media-wrap">
-          <div class="footer-logo">
-            <Link to="/" class="social-logo">
+      <section className="social-media">
+        <div className="social-media-wrap">
+          <div className="footer-logo">
+            <Link to="/" className="social-logo">
               <img
                 src="./images/marvel.png"
-                class="marvel-logo"
+                className="marvel-logo"
                 alt="marvel-logo"
               />
             </Link>
           </div>
-          <small class="website-rights">ROI YEHEZKEL © 2022</small>
-          <div class="social-icons">
+          <small className="website-rights">ROI YEHEZKEL © 2022</small>
+          <div className="social-icons">
             <Link
-              class="social-icon-link facebook"
+              className="social-icon-link facebook"
               to="/"
               aria-label="Facebook"
             >
-              <i class="fab fa-facebook-f" />
+              <i className="fab fa-facebook-f" />
             </Link>
             <Link
-              class="social-icon-link instagram"
+              className="social-icon-link instagram"
               to="/"
               aria-label="Instagram"
             >
-              <i class="fab fa-instagram" />
+              <i className="fab fa-instagram" />
             </Link>
-            <Link class="social-icon-link youtube" to="/" aria-label="Youtube">
-              <i class="fab fa-youtube" />
+            <Link
+              className="social-icon-link youtube"
+              to="/"
+              aria-label="Youtube"
+            >
+              <i className="fab fa-youtube" />
             </Link>
-            <Link class="social-icon-link twitter" to="/" aria-label="Twitter">
-              <i class="fab fa-twitter" />
+            <Link
+              className="social-icon-link twitter"
+              to="/"
+              aria-label="Twitter"
+            >
+              <i className="fab fa-twitter" />
             </Link>
-            <Link class="social-icon-link twitter" to="/" aria-label="LinkedIn">
-              <i class="fab fa-linkedin" />
+            <Link
+              className="social-icon-link twitter"
+              to="/"
+              aria-label="LinkedIn"
+            >
+              <i className="fab fa-linkedin" />
             </Link>
           </div>
         </div>

@@ -8,7 +8,7 @@ export default function WatchList(props) {
   return emptyList ? (
     <>
       <img
-        class="background-img-watchlist-empty"
+        className="background-img-watchlist-empty"
         src="./images/empty.png"
         alt="empty-logo"
       />
@@ -17,7 +17,7 @@ export default function WatchList(props) {
   ) : (
     <>
       <img
-        class="background-img-watchlist"
+        className="background-img-watchlist"
         src="./images/avengers4.jpg"
         alt="avengers-logo"
       />
