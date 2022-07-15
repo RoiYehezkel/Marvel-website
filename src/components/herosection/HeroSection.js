@@ -12,7 +12,9 @@ function HeroSection() {
         alt="avengers-logo"
       />
       <h1>ADVENTURE AWAITS</h1>
-      <p>What are you waiting for</p>
+      <p>
+        Journey into the cosmic depths of the mighty Marvel Cinematic Universe!
+      </p>
       <div className="heros-btn">
         <Link to="/movies">
           <button className="btn btn-outline-light btn-lg home-btn">

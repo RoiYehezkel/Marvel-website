@@ -2,9 +2,12 @@ import React from "react";
 import "../App.css";
 import Footer from "../components/footer/Footer";
 import Cards from "../components/cards/Cards";
+import { useContext } from "react";
+import GlobalContext from "../globalContext/GlobalContext";
 
-export default function WatchList(props) {
-  let emptyList = props.watchlist.length === 0 ? true : false;
+export default function WatchList() {
+  const { watchlist } = useContext(GlobalContext);
+  let emptyList = watchlist.length === 0 ? true : false;
   return emptyList ? (
     <>
       <img
@@ -21,7 +24,7 @@ export default function WatchList(props) {
         src="./images/avengers4.jpg"
         alt="avengers-logo"
       />
-      <Cards movies={props.watchlist} />
+      <Cards movies={watchlist} />
       <Footer />
     </>
   );

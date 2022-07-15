@@ -437,14 +437,15 @@ function App() {
   // handele add movie to watchlist with diffrent cases
   const handleMovieToWatchlist = (movie, purpose) => {
     if (signed) {
+      // add movie after login to website
       if (purpose === "add") {
-        let storedMovie = watchlist.find((o) => o.id === movie.id);
-        const watchlistDisabled = storedMovie ? true : false;
+        setWatchlist([...watchlist, movie]);
         setMessage("The movie successfully added to watchlist");
         setType("success");
         snackbarRef.current.show();
-        if (watchlistDisabled === false) setWatchlist([...watchlist, movie]);
-      } else if (purpose === "remove" && movie !== null) {
+      }
+      // remove movie while the user logged in to the website
+      else if (purpose === "remove" && movie !== null) {
         setWatchlist(
           watchlist.filter((watchlistMovie) => watchlistMovie.id !== movie.id)
         );
@@ -494,10 +495,7 @@ function App() {
                 />
               }
             />
-            <Route
-              path="watchlist"
-              element={<WatchList watchlist={watchlist} />}
-            />
+            <Route path="watchlist" element={<WatchList />} />
             <Route path="sign-up" element={<SignUp />} />
           </Routes>
         </Router>
