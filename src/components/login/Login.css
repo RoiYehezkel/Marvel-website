@@ -2,7 +2,7 @@
   text-align: center;
   justify-content: center;
   display: flex;
-  padding-top: 200px;
+  padding-top: 120px;
   padding-bottom: 90px;
   background-color: rgb(252, 252, 252);
 }
@@ -110,4 +110,10 @@ input {
 }
 .btn {
   margin-bottom: 0.7rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .welcome-text {
+    padding-left: 30px;
+  }
 }

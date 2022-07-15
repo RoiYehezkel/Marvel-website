@@ -59,3 +59,14 @@
     left: -70%;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .search-wrapper {
+    top: 7%;
+    left: 0%;
+  }
+  .filtering-container {
+    top: 60px;
+    left: -100%;
+  }
+}

@@ -27,7 +27,7 @@ function Login() {
                 <i className="fa-solid fa-user icon"></i>
                 <input
                   type="text"
-                  placeholder="user-name"
+                  placeholder="User-Name"
                   className="name"
                   onChange={(e) => {
                     name = e.target.value;
@@ -38,7 +38,7 @@ function Login() {
                 <i className="fa-solid fa-lock icon"></i>
                 <input
                   type="password"
-                  placeholder="password"
+                  placeholder="Password"
                   className="name"
                 />
               </div>
