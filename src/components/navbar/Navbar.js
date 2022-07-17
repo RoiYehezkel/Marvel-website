@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import SignIn from "../login/SignIn";
+import GlobalContext from "../../globalContext/GlobalContext";
 
 function Navbar() {
+  const { watchlist } = useContext(GlobalContext);
   const [click, setClick] = useState(false);
+  let watchListLength = watchlist.length === 0 ? true : false;
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -38,13 +41,20 @@ function Navbar() {
                 Movies
               </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item position-relative">
               <Link
                 to="/watchlist"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
                 WatchList
+                {watchListLength ? (
+                  <span className="position-absolute translate-middle badge rounded-pill bg-danger"></span>
+                ) : (
+                  <span className="position-absolute translate-middle badge rounded-pill bg-danger">
+                    {watchlist.length}
+                  </span>
+                )}
               </Link>
             </li>
           </ul>
