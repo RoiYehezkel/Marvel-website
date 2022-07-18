@@ -4,6 +4,7 @@ import { useContext } from "react";
 import GlobalContext from "../../globalContext/GlobalContext";
 import "./Login.css";
 
+// login text render in the navbar
 function SignIn() {
   const { setLogin, signed, name, handleMovieToWatchlist } =
     useContext(GlobalContext);

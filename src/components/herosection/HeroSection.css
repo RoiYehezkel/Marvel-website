@@ -7,7 +7,7 @@
 }
 
 .hero-container {
-  height: 100vh;
+  height: 95vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -26,6 +26,7 @@
 
 .hero-container > p {
   -webkit-text-stroke: 2px black;
+  text-align: center;
   margin-top: 8px;
   color: white;
   font-size: 50px;
@@ -49,7 +50,7 @@
 @media screen and (max-width: 960px) {
   .hero-container > h1 {
     font-size: 70px;
-    margin-top: -150px;
+    margin-top: 0px;
   }
 }
 
