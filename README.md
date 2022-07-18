@@ -1,8 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-link to the website: https://marvel-website-roi.herokuapp.com/
+Link to the website: https://marvel-website-roi.herokuapp.com/
 
 ## Available Scripts
 
