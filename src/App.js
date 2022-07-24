@@ -371,7 +371,7 @@ function App() {
   const [message, setMessage] = useState("");
   const [type, setType] = useState("warning");
 
-  // calling and get data from server
+  // // calling and get data from server
   // const fetchData = () => {
   //   fetch("http://localhost:8000/movies")
   //     .then((res) => res.json())

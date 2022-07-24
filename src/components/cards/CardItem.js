@@ -5,10 +5,8 @@ import GlobalContext from "../../globalContext/GlobalContext";
 
 function CardItem(props) {
   const { handleMovieToWatchlist, watchlist } = useContext(GlobalContext);
-  // found if the movie already added to watchlist
   let storedMovie = watchlist.find((o) => o.id === props.data.id);
   const watchlistDisabled = storedMovie ? true : false;
-  // add/remove movie from watchlist
   const handleClick = () => {
     if (watchlistDisabled === false) handleMovieToWatchlist(props.data, "add");
     else handleMovieToWatchlist(props.data, "remove");

@@ -49,9 +49,9 @@ function Navbar() {
               >
                 WatchList
                 {watchListLength ? (
-                  <span className="position-absolute translate-middle badge rounded-pill bg-danger"></span>
+                  <span class="position-absolute translate-middle badge rounded-pill bg-danger"></span>
                 ) : (
-                  <span className="position-absolute translate-middle badge rounded-pill bg-danger">
+                  <span class="position-absolute translate-middle badge rounded-pill bg-danger">
                     {watchlist.length}
                   </span>
                 )}
