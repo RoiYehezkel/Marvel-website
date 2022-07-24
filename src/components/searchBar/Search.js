@@ -15,6 +15,7 @@ function Search(props) {
           className="search"
           onChange={(e) => {
             setInputValue(e.target.value);
+            props.search(e.target.value);
           }}
           onKeyPress={(e) => {
             if (e.key === "Enter") {
