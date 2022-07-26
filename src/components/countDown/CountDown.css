@@ -1,0 +1,26 @@
+.nextFilm-container {
+  background-color: rgb(150, 170, 247);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 30px;
+  text-align: center;
+}
+
+.comingSoon {
+  font-family: "Edu VIC WA NT Beginner", cursive;
+  font-weight: 700;
+}
+
+h3,
+h5 {
+  font-family: "Edu VIC WA NT Beginner", cursive;
+  font-weight: 600;
+}
+
+.nextFilm-img {
+  position: relative;
+  width: 200px;
+  margin: auto;
+  padding-bottom: 20px;
+}
