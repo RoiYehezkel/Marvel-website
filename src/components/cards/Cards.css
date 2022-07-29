@@ -109,6 +109,7 @@ h1 {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
+  font-family: "Edu VIC WA NT Beginner", cursive;
   left: 0;
   right: 0;
   text-align: center;
@@ -164,6 +165,7 @@ h1 {
 }
 .footer-card-info {
   font-size: 0.7rem;
+  font-family: "Edu VIC WA NT Beginner", cursive;
 }
 
 @media only screen and (min-width: 1200px) {
