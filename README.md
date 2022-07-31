@@ -3,7 +3,6 @@
 Link to the website: https://marvel-website-roi.herokuapp.com/.
 This website was created using React for the client and Node.js for the server, but this version 
 doesn't require the server to run.
-Adjustments for phone view will be added.
 
 ## Available Scripts
 
